@@ -75,37 +75,37 @@ npm run dev
 
 Frontend usually runs at http://localhost:3000.
 
-API Endpoints
-Auth
-Method	Endpoint	Description
-POST	/api/register	Register new user
-POST	/api/login	Login user
-POST	/api/logout	Logout (requires token)
-GET	/api/me	Get authenticated user info
-Events (Public)
-Method	Endpoint	Description
-GET	/api/events	List all events
-GET	/api/events/{id}	View event details
-GET	/api/events/{eventId}/tickets	List tickets for event
-GET	/api/events/{eventId}/tickets/{ticketId}	View ticket details
-Bookings (Protected)
-Method	Endpoint	Description
-POST	/api/tickets/{id}/bookings	Create booking (prevents duplicate)
-GET	/api/bookings	View user bookings
-PUT	/api/bookings/{id}/cancel	Cancel pending booking
-Payments (Protected)
-Method	Endpoint	Description
-POST	/api/bookings/{id}/payment	Process payment
-GET	/api/payments/{id}	View payment details
-Organizer/Admin (Protected + Role)
-Method	Endpoint	Description
-POST	/api/events	Create event
-PUT	/api/events/{id}	Update event
-DELETE	/api/events/{id}	Delete event
-GET	/api/my-events	List organizer’s events
-POST	/api/events/{eventId}/tickets	Create ticket for event
-PUT	/api/events/{eventId}/tickets/{ticketId}	Update ticket
-DELETE	/api/events/{eventId}/tickets/{ticketId}	Delete ticket
+API End Points
+
+| Method | Endpoint        | Description                 |
+| ------ | --------------- | --------------------------- |
+| POST   | `/api/register` | Register new user           |
+| POST   | `/api/login`    | Login user                  |
+| POST   | `/api/logout`   | Logout (requires token)     |
+| GET    | `/api/me`       | Get authenticated user info |
+
+| Method | Endpoint                                   | Description            |
+| ------ | ------------------------------------------ | ---------------------- |
+| GET    | `/api/events`                              | List all events        |
+| GET    | `/api/events/{id}`                         | View event details     |
+| GET    | `/api/events/{eventId}/tickets`            | List tickets for event |
+| GET    | `/api/events/{eventId}/tickets/{ticketId}` | View ticket details    |
+
+| Method | Endpoint                     | Description          |
+| ------ | ---------------------------- | -------------------- |
+| POST   | `/api/bookings/{id}/payment` | Process payment      |
+| GET    | `/api/payments/{id}`         | View payment details |
+
+| Method | Endpoint                                   | Description             |
+| ------ | ------------------------------------------ | ----------------------- |
+| POST   | `/api/events`                              | Create event            |
+| PUT    | `/api/events/{id}`                         | Update event            |
+| DELETE | `/api/events/{id}`                         | Delete event            |
+| GET    | `/api/my-events`                           | List organizer’s events |
+| POST   | `/api/events/{eventId}/tickets`            | Create ticket for event |
+| PUT    | `/api/events/{eventId}/tickets/{ticketId}` | Update ticket           |
+| DELETE | `/api/events/{eventId}/tickets/{ticketId}` | Delete ticket           |
+
 
 Admin-only routes are prefixed with /api/admin and will manage all resources.
 
